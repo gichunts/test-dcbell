@@ -1,0 +1,33 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true
+  },
+  "extends": ["airbnb-base", "prettier"],
+  "parserOptions": {
+    "ecmaVersion": 12
+  },
+  "rules": {
+    "arrow-parens": ["error", "as-needed"],
+    "comma-dangle": ["error", "never"],
+    "new-cap": ["error", { "properties": false }],
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "*", "next": "export" },
+      { "blankLine": "always", "prev": "*", "next": "for" },
+      { "blankLine": "always", "prev": "*", "next": "if" },
+      { "blankLine": "always", "prev": "*", "next": "return" },
+      { "blankLine": "always", "prev": "*", "next": "try" },
+      { "blankLine": "always", "prev": "const", "next": "if" },
+      { "blankLine": "always", "prev": "const", "next": "export" },
+      { "blankLine": "always", "prev": "const", "next": "try" },
+      { "blankLine": "always", "prev": "if", "next": "*" },
+      { "blankLine": "always", "prev": "let", "next": "if" },
+      { "blankLine": "always", "prev": "let", "next": "try" },
+      { "blankLine": "always", "prev": "multiline-const", "next": "*" },
+      { "blankLine": "always", "prev": "multiline-let", "next": "*" },
+      { "blankLine": "never", "prev": "import", "next": "import" }
+    ]
+  }
+}

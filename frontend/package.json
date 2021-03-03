@@ -1,0 +1,37 @@
+{
+  "name": "dcbel-new-platform-frontend",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "webpack --config webpack.config.prod.js --env NODE_ENV=production",
+    "lint": "eslint . --ext .js,.jsx",
+    "start": "webpack serve --config webpack.config.dev.js --env NODE_ENV=development"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "@babel/preset-react": "^7.12.13",
+    "babel-loader": "^8.2.2",
+    "chalk": "^4.1.0",
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "html-webpack-plugin": "^5.0.0",
+    "prettier": "^2.2.1",
+    "webpack": "^5.20.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.7.3"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-is": "^17.0.1",
+    "styled-components": "^5.2.1"
+  }
+}

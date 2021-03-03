@@ -1,0 +1,19 @@
+service: dcbel-new-platform
+
+provider:
+  name: azure
+  region: Canada Central
+  runtime: nodejs12
+  stage: ${opt:stage, 'development'}
+
+plugins:
+  - serverless-azure-functions
+
+functions:
+  getUser:
+    handler: src/functions/user.getUser
+    events:
+      - http: true
+        methods:
+          - GET
+        authLevel: anonymous
