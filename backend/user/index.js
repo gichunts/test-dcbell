@@ -12,16 +12,35 @@
 //     };
 // }
 
-module.exports = async (context, req) => {
-  const id = 1;
-  const firstName = "First name";
-  const lastName = "Last name";
+// module.exports = async (context, req) => {
+//   const id = 1;
+//   const firstName = "First name";
+//   const lastName = "Last name";
 
-  context.res = {
-    body: {
-      id,
-      firstName,
-      lastName,
-    },
-  };
+//   context.res = {
+//     body: {
+//       id,
+//       firstName,
+//       lastName,
+//     },
+//   };
+// };
+
+const main = require('../keyvault');
+
+module.exports = async function (context) {
+  try {
+    // const sendGrid = await SendGrid.createInstance(false);
+    // await sendGrid.sendEmail('<h1>Text</h1>', 'Subject', 'thiago@hesper.io');
+    const result = await main('db')
+    context.res = {
+      body: result
+    };
+  } catch (error) {
+    console.error(error);
+
+    context.res = {
+      body: false
+    };
+  }
 };
