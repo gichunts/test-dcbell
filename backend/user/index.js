@@ -33,9 +33,10 @@ module.exports = async function (context) {
     // const sendGrid = await SendGrid.createInstance(false);
     // await sendGrid.sendEmail('<h1>Text</h1>', 'Subject', 'thiago@hesper.io');
     const result = await main('db')
-    context.res = {
-      body: result
-    };
+      context.console(result)
+      context.res = {
+        body: true
+      };
   } catch (error) {
     console.error(error);
 
