@@ -26,22 +26,22 @@
 //   };
 // };
 
-const main = require('../keyvault');
+const main = require("../keyvault");
 
 module.exports = async function (context) {
   try {
     // const sendGrid = await SendGrid.createInstance(false);
     // await sendGrid.sendEmail('<h1>Text</h1>', 'Subject', 'thiago@hesper.io');
-    const result = await main('db')
-      context.console(result)
-      context.res = {
-        body: true
-      };
+    const result = await main("db");
+    context.log(result, "result");
+    context.res = {
+      body: result,
+    };
   } catch (error) {
     console.error(error);
 
     context.res = {
-      body: false
+      body: false,
     };
   }
 };

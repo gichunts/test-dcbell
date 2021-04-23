@@ -4,7 +4,6 @@
 // "password": "Gm31OhJ79i.wryvZDKoq-Ru6oQr.rdDnUL",
 // "tenant": "1c650553-8a47-4cf9-a253-1f8f34833132"
 
-
 const { DefaultAzureCredential } = require("@azure/identity");
 const { SecretClient } = require("@azure/keyvault-secrets");
 
@@ -15,12 +14,21 @@ const credential = new DefaultAzureCredential();
 const client = new SecretClient(url, credential);
 
 const secretName = "db";
- 
+
 async function main() {
-  const latestSecret = await client.getSecret(secretName);
-  console.log(`Latest version of the secret ${secretName}: `, latestSecret);
+  try {
+    const latestSecret = await client.getSecret(secretName);
+    console.log(`Latest version of the secret ${secretName}: `, latestSecret);
+
+    return latestSecret;
+  } catch (error) {
+    console.log(error);
+  }
+
+  return null;
 }
 
+// main()
 
 module.exports = main;
 
